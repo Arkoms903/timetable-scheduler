@@ -1,0 +1,14 @@
+# Virtual Environment folder
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Database file (for development)
+db.sqlite3
+
+# IDE and OS specific files
+.vscode/
+.idea/
+*.DS_Store
