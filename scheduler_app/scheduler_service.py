@@ -12,7 +12,7 @@ from .models import (
 DAYS = range(1, 7)
 PERIODS = range(1, 9)
 
-def generate_period_times(start="09:00", duration=45, periods=8):
+def generate_period_times(start="10:00", duration=50, periods=8):
     """Generate a dict mapping period numbers to (start_time, end_time) as time objects."""
     period_times = {}
     start_dt = datetime.strptime(start, "%H:%M")
@@ -24,7 +24,7 @@ def generate_period_times(start="09:00", duration=45, periods=8):
 
 
 class TimetableORToolsSolver:
-    def __init__(self, start_time="09:00", period_duration=45, periods_per_day=8):
+    def __init__(self, start_time="10:00", period_duration=50, periods_per_day=8):
         # load data
         self.all_sections = list(Section.objects.all())
         self.all_classrooms = list(Classroom.objects.all())
