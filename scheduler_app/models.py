@@ -1,6 +1,7 @@
 from django.db import models
 from django.forms import ValidationError
 
+
 # Create your models here.
 class Faculty(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -111,7 +112,6 @@ class ScheduledClass(models.Model):
 
     day = models.IntegerField(choices=DAYS_OF_WEEK)
     period = models.PositiveIntegerField()
-
     # We use PROTECT to prevent deleting a faculty member if they are part of a generated schedule.
     faculty = models.ForeignKey(Faculty, on_delete=models.PROTECT, related_name="scheduled_classes")
     subject = models.ForeignKey(Subject, on_delete=models.PROTECT, related_name="scheduled_classes")
